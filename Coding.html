@@ -1,0 +1,220 @@
+
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+----------------------------------------------CSS--------------------------------------------
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+/*______________________________Main body of Calculator_____________________________*/
+body {
+    font-family: sans-serif;
+    background-color: #D5DBDB;
+    font-size: 30px;
+}
+
+/*__________________________Title (on top of calculator)_____________________________*/
+#title {
+    margin-left: 15px;
+    margin-top: -30px;
+
+}
+
+/*_______________________Calculator Display Screen (answerbox)______________________*/
+#answerbox {
+    background-color: #ECF0F1;
+    margin-top: -30px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-bottom: -50px;
+    border: 2px solid #D0D3D4;
+    text-align: right;
+    border-radius: 10px;
+    box-shadow: inset 0px 4px rgba(0, 0, 0, 0.2);
+
+    font-size: 26px;
+	line-height: 40px;
+	color: black;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+	text-align: right;
+	letter-spacing: 1px
+}
+
+.img {
+    position: absolute;bottom: 10px;
+}
+
+/*______________________________Calculator frame only_______________________________*/
+
+#calculator {
+    height: 350px;
+    width: 225px;
+    margin-left: 400px;
+    margin-top: 80px;
+    background-color: grey;
+    border-radius: 10px;
+    border: 5px solid #424949 ; 
+    box-shadow: 7px 15px 40px 1px 
+}
+
+/*_________________________________Buttons positioning_______________________________*/
+
+input[type=button]{
+   background-color: lightgray;
+   width: 45px;
+   height: 50px;
+   margin-left: 5px;
+   padding-left: 5px;
+   margin-top: 5px;
+}
+.button {
+    position: relative;
+    background-color: #a3afa7;
+    font-size: 28px;
+    color: black;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+}
+
+/*______________________________Button hover effects_______________________________*/
+
+.button:hover {
+    background: #818783; 
+
+
+}
+.button:active {
+    background: #818783;
+    transform: translate(2px, 3px);
+    box-shadow: 2px 0px #696d72;
+
+}
+
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+---------------------------------------------HTML--------------------------------------------
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+<!DOCTYPE HTML>
+
+<div id = 'calculator'>
+
+<html>
+
+
+<!--________________________________TITLE____________________________________________-->
+    <head>
+        <title>Calculator</title>
+        <link rel="stylesheet" href="css/index.css"/>
+
+ <div id='title' class='text-center'>
+   <h5><b>CALCULATOR</b></h5>
+
+    </div>
+
+    </head>
+<!--________________________________ANSWER BOX____________________________________-->
+
+
+<div id='answerbox' class='text-right' name='display'>
+     
+        <div id='buttons'>
+            <form name="calculator" >
+                <output type="text" name="answer" class:'text-right'/>
+            </form>
+      </div>
+</div>
+
+ 
+<!--_______________________________BUTTONS_________________________________________-->
+
+    <body>
+
+<div id ='button' name = 'button' class="text-center" >
+    
+    
+
+      <input type ='button' class="button" value = '7' onclick="calculator.answer.value += '7'"/>
+      <input type ='button' class="button" value = '8' onclick="calculator.answer.value += '8'"/>
+      <input type ='button' class="button" value = '9' onclick="calculator.answer.value += '9'"/>
+      <input type ='button' class="button" value = '+' onclick="calculator.answer.value += '+'"/>
+
+      <input type ='button' class="button" value = '4' onclick="calculator.answer.value += '4'"/>
+      <input type ='button' class="button" value = '5' onclick="calculator.answer.value += '5'"/>
+      <input type ='button' class="button" value = '6' onclick="calculator.answer.value += '6'"/>
+      <input type ='button' class="button" value = '-' onclick="calculator.answer.value += '-'"/>
+
+      <input type ='button' class="button" value = '1' onclick="calculator.answer.value += '1'"/>
+      <input type ='button' class="button" value = '2' onclick="calculator.answer.value += '2'"/>
+      <input type ='button' class="button" value = '3' onclick="calculator.answer.value += '3'"/>
+      <input type ='button' class="button" value = '/' onclick="calculator.answer.value += '/'"/>
+
+      <input type ='button' class="button"  value = 'AC' onclick="calculator.answer.value = ' '"/>
+      <input type ='button' class="button" value = '0' onclick="calculator.answer.value += '0'"/>
+      <input type ='button' class="button" value = '=' onclick="calculator.answer.value = eval(calculator.answer.value)"/>
+      <input type ='button' class="button" value = 'X' onclick="calculator.answer.value += '*'"/>
+
+
+    </div>
+
+      
+      
+      
+      
+
+
+      </div>
+
+ </body>
+
+     
+<!--________________________________________________________________________________-->
+
+
+
+
+
+
+
+
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
+
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+-----------------------------------------------JS--------------------------------------------
+---------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+
+//___________buttons' value displayed as an output to calculator screen______________
+function c(val) {
+  document.getElementById('answer').value=val;
+
+}
+
+//_________________________calculator maths function__________________________________
+function math(val){
+  document.getElementById('answer').value+=val;
+
+}
+
+//_________________________________output to user_____________________________________
+function e()
+{
+
+  try
+{
+  c(eval(document.getElementById('answer').value));
+}
+
+catch(e) {
+
+  c('Error')
+
+}
+
+}

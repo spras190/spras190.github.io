@@ -1,0 +1,85 @@
+
+/*______________________________Main body of Calculator_____________________________*/
+body {
+    font-family: sans-serif;
+    background-color: #D5DBDB;
+    font-size: 30px;
+}
+
+/*__________________________Title (on top of calculator)_____________________________*/
+#title {
+    margin-left: 15px;
+    margin-top: -30px;
+
+} 
+
+/*_______________________Calculator Display Screen (answerbox)______________________*/
+#answerbox {
+    background-color: #ECF0F1;
+    margin-top: -30px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-bottom: -50px;
+    border: 2px solid #D0D3D4;
+    text-align: right;
+    border-radius: 10px;
+    box-shadow: inset 0px 4px rgba(0, 0, 0, 0.2);
+
+    font-size: 26px;
+	line-height: 40px;
+	color: black;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+	text-align: right;
+	letter-spacing: 1px
+}
+
+.img {
+    position: absolute;bottom: 10px;
+}
+
+/*______________________________Calculator frame only_______________________________*/
+
+#calculator {
+    height: 350px;
+    width: 225px;
+    margin-left: 400px;
+    margin-top: 80px;
+    background-color: grey;
+    border-radius: 10px;
+    border: 5px solid #424949 ; 
+    box-shadow: 7px 15px 40px 1px 
+}
+
+/*_________________________________Buttons positioning_______________________________*/
+
+input[type=button]{
+   background-color: lightgray;
+   width: 45px;
+   height: 50px;
+   margin-left: 5px;
+   padding-left: 5px;
+   margin-top: 5px;
+}
+.button {
+    position: relative;
+    background-color: #a3afa7;
+    font-size: 28px;
+    color: black;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+}
+
+/*______________________________Button hover effects_______________________________*/
+
+.button:hover {
+    background: #818783; 
+
+
+}
+.button:active {
+    background: #818783;
+    transform: translate(2px, 3px);
+    box-shadow: 2px 0px #696d72;
+
+}
